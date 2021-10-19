@@ -55,7 +55,7 @@ public class Sample3Task {
         try {
             String button2Name = driver.findElement(By.id("buttonId")).getAttribute("value");
 //            System.out.println(button2Name);
-            assertTrue(button2Name.equalsIgnoreCase("this is Also a Button2"));
+            assertTrue(button2Name.equalsIgnoreCase("this is Also a Button"));
         } catch (AssertionError e) {
             System.err.println("FAIL!!!!!!!!! ");
             e.printStackTrace();
