@@ -51,7 +51,9 @@ public class Task1 {
 
     @Test
     public void errorOnNumberTooSmall() {
-        WebElement numberInput = driver.findElement(By.id("numb"));
+//        WebElement numberInput = driver.findElement(By.id("numb"));
+//        WebElement numberInput = driver.findElement(By.cssSelector("#numb"));
+        WebElement numberInput = driver.findElement(By.xpath("//input[@id = 'numb']"));
         String testNumber = "40";
 //        TODO
 //        enter number which is too small (below 50), check that correct error is seen
