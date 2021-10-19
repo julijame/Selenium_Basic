@@ -17,6 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class Task1 {
     WebDriver driver;
 
+
     @Before
     public void openPage() {
 
@@ -49,6 +50,7 @@ public class Task1 {
 
     }
 
+
     @Test
     public void errorOnNumberTooSmall() {
 //        WebElement numberInput = driver.findElement(By.id("numb"));
@@ -69,7 +71,6 @@ public class Task1 {
     public void errorOnNumberTooBig() {
         WebElement numberInput = driver.findElement(By.id("numb"));
         String testNumber = "140";
-
 //        BUG: if I enter number 666 no errors where seen
 //        TODO
 //        enter number which is too big (above 100), check that correct error is seen
@@ -81,13 +82,14 @@ public class Task1 {
         assertTrue(driver.findElement(By.id("ch1_error")).getText().equals("Number is too big"));
     }
 
+
     @Test
     public void correctSquareRootWithoutRemainder() {
         WebElement numberInput = driver.findElement(By.id("numb"));
-        String testNumber = "81";
+        int testNumber = 81;
 //        TODO
         numberInput.clear();
-        numberInput.sendKeys(testNumber);
+        numberInput.sendKeys(Integer.toString(testNumber));
         driver.findElement(By.className("w3-orange")).click();
 
 //        enter a number between 50 and 100 digit in the input (square root of which doesn't have a remainder, e.g. 2 is square root of 4),
@@ -96,8 +98,11 @@ public class Task1 {
         assertEquals("Square root of 81 is 9.00", alert.getText());
         alert.accept();
 
+        assertEquals(driver.findElement(By.id("ch1_error")).getText(), "");
+
 
     }
+
 
     @Test
     public void correctSquareRootWithRemainder() {
@@ -113,6 +118,8 @@ public class Task1 {
         Alert alert = driver.switchTo().alert();
         assertEquals("Square root of 62 is 7.87", alert.getText());
         alert.accept();
+
+        assertEquals(driver.findElement(By.id("ch1_error")).getText(), "");
     }
 
 }
