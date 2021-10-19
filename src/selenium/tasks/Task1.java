@@ -114,4 +114,5 @@ public class Task1 {
         assertEquals("Square root of 62 is 7.87", alert.getText());
         alert.accept();
     }
+
 }
