@@ -69,7 +69,7 @@ public class Sample3Task {
 //        check that it is False that value of second button is "This is a button"
         String button2Name = driver.findElement(By.id("buttonId")).getAttribute("value");
         System.out.println(button2Name);
-        assertFalse(button2Name.equalsIgnoreCase("This is also a button"));
+        assertFalse(button2Name.equalsIgnoreCase("This is a button"));
     }
 
     @Test
