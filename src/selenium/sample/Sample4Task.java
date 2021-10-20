@@ -60,10 +60,10 @@ public class Sample4Task {
         resultButton.click();
 
 //        check that text is displayed
-        assertTrue(resultButton.isDisplayed());
+        assertTrue(resultText.isDisplayed());
 
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
-        assertTrue(resultText.getText().equals("You entered number: \""+newText+"\""));
+        assertTrue(resultText.getText().equals("You entered number: \"" + newText + "\""));
 
 //        check that the button "Clear Result" is clickable now
         assertTrue(clearButton.isEnabled());
